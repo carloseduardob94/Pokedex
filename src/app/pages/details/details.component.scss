@@ -1,0 +1,147 @@
+@import '../../../config-scss/rem-calc.scss';
+
+:host {
+	main {
+		margin-top: rem-cal(40);
+
+		.pokemon__names {
+			position: relative;
+			display: flex;
+			align-items: flex-end;
+			justify-content: flex-end;
+
+			height: 75px;
+
+			padding: 0 rem-cal(30);
+
+			h1 {
+				color: var(--white);
+				font-size: rem-cal(32);
+				text-transform: capitalize;
+			}
+
+			h2 {
+				position: absolute;
+				font-weight: 100;
+				top: 0;
+				font-size: rem-cal(60);
+				color: rgba(255, 255, 255, 0.1);
+			}
+
+			h1,
+			h2 {
+				//Remove Bug Animation
+				-webkit-animation-fill-mode: none !important;
+				animation-fill-mode: none !important;
+			}
+		}
+
+		.pokemon__status {
+			position: relative;
+
+			img {
+				position: absolute;
+				top: rem-cal(-90);
+				left: rem-cal(30);
+				width: rem-cal(170);
+				height: rem-cal(170);
+				z-index: 10;
+
+				//Remove Bug Animation
+				-webkit-animation-fill-mode: none !important;
+				animation-fill-mode: none !important;
+			}
+
+      a {
+        width: rem-cal(530);
+        height: rem-cal(54);
+
+        border-radius: 10px;
+
+        background: var(--secondary-color);
+
+        color: white;
+        font-size: rem-cal(18);
+        line-height: rem-cal(21);
+        font-weight: 400;
+
+        cursor: pointer;
+
+        margin: rem-cal(30) auto;
+
+        text-align: center;
+        text-decoration: none;
+
+        padding: 18px 0;
+
+        &:hover {
+          background: #c03b53;
+        }
+      }
+
+			&__statistics {
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+
+				background: var(--white);
+
+				min-height: 43.9vh;
+				margin-top: rem-cal(10);
+
+				padding: rem-cal(110) rem-cal(35) rem-cal(30);
+				border-radius: rem-cal(50) rem-cal(50) 0 0;
+
+				h3 {
+					margin-bottom: rem-cal(20);
+					font-weight: 700;
+					font-style: italic;
+					font-size: rem-cal(32);
+					text-decoration: underline;
+					color: var(--secondary-color);
+				}
+
+				ol {
+					li {
+						display: flex;
+						justify-content: space-between;
+
+						font-size: rem-cal(18);
+						line-height: 130%;
+					}
+				}
+			}
+		}
+
+		@media (max-width: 420px) {
+			margin-top: rem-cal(10);
+
+			.pokemon__names {
+				h1 {
+					font-size: rem-cal(20);
+				}
+
+				h2 {
+					top: rem-cal(35);
+					font-size: rem-cal(20);
+				}
+			}
+
+			.pokemon__status {
+				position: relative;
+
+				img {
+					position: absolute;
+					top: rem-cal(-80);
+					left: rem-cal(0);
+					max-width: rem-cal(100);
+				}
+
+				&__statistics {
+					min-height: 57vh;
+					padding-top: rem-cal(50);
+				}
+			}
+		}
+	}
+}
